@@ -12,7 +12,7 @@ int main() {
   std::cout << "Length of the string: " << len << std::endl;
   // And a random number in addition:
   int a, b;
-  a = srand(12.5);
+  srand(12);
   b = rand();
   std::cout << "\nRandom number: " << b << std::endl;
  return 0;
