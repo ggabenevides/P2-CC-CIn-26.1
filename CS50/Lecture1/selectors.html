@@ -1,0 +1,47 @@
+<!--
+CSS Selectors
+a,b - multiple element selector
+a b - descendant selector: apply styling to list items found within an unordered list
+a > b - child selector
+a + b - adjacent sibling selector
+[a=b]-  attribute selector
+a:b - pseudoclass selector
+a: :b - pseudoelement selector
+-->
+
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <title> Hello! </title>
+        <style>
+            ul > li{
+                color: blue;
+            }
+            ol{
+                color:brown;
+            }
+            a{
+                color: blue;
+            }
+            a[href="https://facebook.com"]{
+                color: tomato;
+            }
+        </style>
+    </head>
+    <body>
+        <ol>
+            <li>list item one</li>
+            <li>list item two</li>
+            <ul>
+                <li>sublist item one</li>
+                <li>sublist item two</li>
+            </ul>
+            <li>list item three</li>
+        </ol>
+        <ul>
+            <li><a href="https://google.com">Google</a></li>
+            <li><a href="https://facebook.com">Facebook</a></li>
+            <li><a href="https://amazon.com">Amazon</a></li>
+        </ul>
+    </body>
+</html>
