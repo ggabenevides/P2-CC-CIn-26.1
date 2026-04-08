@@ -1,3 +1,7 @@
+input, #navbar-item{
+   font-family: Arial, Helvetica, sans-serif;
+}
+
 #navbar{
    list-style-type: none; 
    display: flex;
@@ -7,7 +11,6 @@
 
 #navbar-item{
    margin: 5px;
-   font-family: Arial, Helvetica, sans-serif;
 }
 
 a{
@@ -20,7 +23,6 @@ a:hover{
 }
 
 input[type="text"]{
-   font-family: Arial, Helvetica, sans-serif;
    font-size: medium;
    display: flex;
    position: relative;
