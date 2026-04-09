@@ -1,6 +1,11 @@
-input, #navbar-item{
+input, #navbar-item, #page-title, #table{
    font-family: Arial, Helvetica, sans-serif;
 }
+
+#page-title{
+   color: red;
+}
+
 
 #navbar{
    list-style-type: none; 
@@ -22,7 +27,7 @@ a:hover{
    text-decoration: underline;
 }
 
-input[type="text"]{
+#main-input-text{
    font-size: medium;
    display: flex;
    position: relative;
@@ -62,4 +67,9 @@ input[type="submit"]:hover{
 
 #search-main{
    text-align: center;
+}
+
+td, th{
+   padding: 5px;
+   margin: 10px;
 }
