@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Search</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div>
+            <ul id="navbar">
+                <li id="navbar-item"><a href="index.html"><img src="Google.png" alt="Google Logo" height="24" float: left></a></li> 
+            </ul>
+        </div>
+        <span id="page-title">Advanced Search</span>
+        <hr>
+        <form action="https://google.com/search">
+            <div id="grid">
+                <div class="grid-item" id="light">Find pages with...</div>
+                <div class="grid-item"></div>
+                <div class="grid-item"id="grey"><h4>To do this in the search box.</h4></div>
+
+                <div class="grid-item">all these words:</div>
+                <div class="grid-item">
+                    <input class="advanced-input" type="text" name="as_q">
+                </div>
+                <div class="grid-item" id="grey">Type the important words: <span class="markdown">tri-colour rat terrier</span></div>
+
+                <div class="grid-item">this exact word or phrase:</div>
+                <div class="grid-item">
+                    <input class="advanced-input" type="text" name="as_epq">
+                </div>
+                <div class="grid-item" id="grey">Put exact words in quotes: <span class="markdown">rat terrier</span></div>
+
+                <div class="grid-item">any of these words:</div>
+                <div class="grid-item">
+                    <input class="advanced-input" type="text" name="as_oq">
+                </div>
+                <div class="grid-item" id="grey">Type OR between all the words you want: <span class="markdown">miniature OR standard</span></div>
+
+                <div class="grid-item">none of this words:</div>
+                <div class="grid-item">
+                    <input class="advanced-input" type="text" name="as_eq">
+                </div>
+                <div class="grid-item" id="grey">Put a minus sign just before words that you don't want: <span class="markdown">-rodent, -"Jack Russell"</span></div>
+
+                <div class="grid-item"></div>
+                <div class="grid-item" id="adv-search-grid">
+                    <input type="submit" value="Advanced Search" id="adv-search-btn">
+                </div>
+                <div class="grid-item"></div>
+            </div>
+            <hr>
+        </form>
+    </body>
+</html>
