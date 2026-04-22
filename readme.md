@@ -25,10 +25,12 @@ A organização segue uma lógica de pastas por disciplina e módulos para mante
 g++ -g Cadeira/Módulo/arquivo.cpp -o bin/arquivo
 ```
 
-### Compilação para Debugging 
+### Debugging C++
+Executar esse comando no bash:
 ```
 g++ -g arquivo.cpp -o a.out
 ```
+E depois usar f5 para abrir o debugger.
 
 ### Execução de códigos C++
 ```
