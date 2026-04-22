@@ -1,6 +1,6 @@
-# Repositório do 2º período de Ciência da Computação @ CIn-UFPE 
+# CC 26.1 @ CIn-UFPE 
 
-Este repositório contém os exercícios e projetos desenvolvidos para as disciplinas de Estrutura de Dados Orientadas a Objetos (EDOO), Arquitetura de Computadores e Sistemas Operacionais (ACS0) e CS50's Introduction to Web Development with Python and JavaScript (WCS50), utilizando o ambiente **WSL (Ubuntu)**.
+Este repositório contém os exercícios e projetos desenvolvidos para as disciplinas do segundo período do curso de bacharelado em Ciência da Computação: de Estrutura de Dados Orientadas a Objetos (EDOO), Arquitetura de Computadores e Sistemas Operacionais (ACS0) e CS50's Introduction to Web Development with Python and JavaScript (WCS50), utilizando o ambiente **WSL (Ubuntu)**.
 
 ## Estrutura do Repositório
 
