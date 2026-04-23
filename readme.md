@@ -28,7 +28,7 @@ g++ -g Cadeira/Módulo/arquivo.cpp -o bin/arquivo
 ### Debugging C++
 Executar esse comando no bash:
 ```
-g++ -g arquivo.cpp -o a.out
+g++ -g arquivo.cpp -o bin/a.out
 ```
 E depois usar f5 para abrir o debugger.
 
