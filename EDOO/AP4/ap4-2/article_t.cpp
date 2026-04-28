@@ -4,21 +4,46 @@ using namespace std;
 
 Article globalObj(123, "Book", 49.99);
 
-void test(){
-    Article localObj2(7, "Water Bottle", 1.99);
-    Article localObj3(6, "Protein Bar", 8.99);
-    // one of the objects has to have static definitions
-    localObj2.print();
-    localObj3.print();
-    cout << "Function 'test' terminated.";
-
+void test(int n, const string& s, double d){
+    Article funcObj(n, s, d);
+    static Article staticObj (23, "Gabi", 10000.00);
+    funcObj.print();
+    staticObj.print();
+    cout << "Function 'test' terminated." << endl;
 }
 
-int main(){
+int main(){    
+    cout << "First statement within main." << endl;
+    cout << "Calling global object:" << endl;
+    globalObj.print();
+
     Article localObj(23, "Pencil", 3.00);
-    test();
-    //test need to be called twice
-    //call the access methods to modify individual data members and display the objects on screen
+
+    cout << "First call to function 'test" << endl;
+    test(7, "Rice", 10.99);
+    cout << "Second call to function 'test" << endl;
+    test(9, "Beans", 99.10);
+
+
+    cout << "Test 1: Display Method" << endl;
+    localObj.print();   
+
+
+    cout << "Test 2: Access functions - GET" << endl;
+    cout << "Object Name: " << localObj.getName() << endl;
+    cout << "Object Number: " << localObj.getNumber() << endl;
+    cout << "Object Price: " << localObj.getPrice() << endl;
+
+    localObj.setName("Beans");
+    localObj.setPrice(5.50);
+    localObj.setNumber(1);
+
+    cout << endl;
+    cout << "Test 3: Access functions - SET" << endl;
+    localObj.getName();
+    localObj.getNumber();
+    localObj.getPrice();
+    localObj.print();
 }
 
 /*

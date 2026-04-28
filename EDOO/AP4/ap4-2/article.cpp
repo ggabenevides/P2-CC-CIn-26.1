@@ -6,26 +6,33 @@ int count = 0;
 
 void Article::print()
 {
+    cout << endl;
     cout << "Article name: " << name << endl;
     cout << "Article number: " << number << endl;
     cout << "Article price: $" << price << endl;
+    cout << endl;
 }
 
-Article::Article(long n = 0, const string& s = "Not provided", double p = 0.0)
+Article::Article(long n, const string& s, double p)
 {
     number = n;
     name = s;
     (p >= 0) ? price = p : price = 0.0;
-
-    cout << "An object of type Article " << name << " is created." << endl;
-    cout << "This is the" << count << "Article." << endl;
-
     ++count;
+
+    cout << endl;
+    cout << "An object of type Article " << name << " is created." << endl;
+    cout << "This is the " << count << "º Article." << endl;
+    cout << endl;
+
+    
 }
 
 Article::~Article()
 {
     --count;
-    cout << "The object of type Article" << name << "is destroyed." << endl;
-    cout << "There are still" << count << "articles." << endl;
+    cout << endl;
+    cout << "The object of type Article " << name << " is destroyed." << endl;
+    cout << "There are still " << count << " articles." << endl;
+    cout << endl;
 }

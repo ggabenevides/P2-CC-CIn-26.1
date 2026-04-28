@@ -12,7 +12,7 @@ class Article
         double price;
     
     public:
-        Article(long n = 0, const string& = "Not provided", double p = 0.0); //constructor with default values
+        Article(long n = 0, const string& s = "Not provided", double p = 0.0); //constructor with default values
         ~Article(); //destructor
         void print(); //display method
 
@@ -23,9 +23,9 @@ class Article
         double getPrice() {return price;}
 
         //set methods for each data member:
-        long setNumber(long n) {number = n;}
-        string setName(string s) {name = s;}
-        double setPrice(double p) {(p >= 0) ? price = p : price = 0.0;}        
+        void setNumber(long n) {number = n;}
+        void setName(string s) {name = s;}
+        void setPrice(double p) {(p >= 0) ? price = p : price = 0.0;}        
 
 };
 
