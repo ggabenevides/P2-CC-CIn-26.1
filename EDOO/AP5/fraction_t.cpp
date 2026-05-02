@@ -23,7 +23,7 @@ int main()
     
     temp = op1; // resetting test
     temp = op1-op2;
-    cout << "Sum with dual operator: " << op1 << " - " << op2 << " = " << temp << endl;
+    cout << "Subtraction with dual operator: " << op1 << " - " << op2 << " = " << temp << endl;
 
     temp = op1;
     temp *= op2;
@@ -57,7 +57,7 @@ int main()
     cout << test1 << " + 2 = " << f3 << endl;
 
     // Fraction -> double conversion
-    double result = test2;   // Converts 3/4 to 0.75
+    double result = test2;   
     cout << "Convert to double: " << result << endl;
 
     // mixing types in arithmetic
