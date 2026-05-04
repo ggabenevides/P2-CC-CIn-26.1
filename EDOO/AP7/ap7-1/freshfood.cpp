@@ -2,7 +2,7 @@
 #include "freshfood.h"
 #include <iostream>
 
-FreshFood::FreshFood(long p, long n, long b, long w) : Product(b, n)
+FreshFood::FreshFood(long p, std::string n, long b, long w) : Product(b, n)
 {
     weight = w;
     priceKilo = p;

@@ -2,7 +2,7 @@
 #include "prepackedFood.h"
 #include <iostream>
 
-PrepackedFood::PrepackedFood(long p, long b, long n) : Product(b, n)
+PrepackedFood::PrepackedFood(long p, long b, std::string n) : Product(b, n)
 {
     unitPrice = p;
 }
