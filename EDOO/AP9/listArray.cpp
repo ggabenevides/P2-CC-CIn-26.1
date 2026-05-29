@@ -1,4 +1,4 @@
-#include "list.hpp"
+#include "listArray.hpp"
 
 AList::AList(int max)
 {
@@ -22,13 +22,24 @@ void AList::insert(int& x)
     currSize++;
 }
 
-void AList::remove()
+void AList::append(int& x)
 {
+    if (currSize != maxSize)
+    {    
+        listArray[currSize] = x;
+        currSize++;
+    }
+}
+
+int AList::remove()
+{
+    int temp = listArray[currPos];
     for (int i = currPos; i < currSize; i++)
     {
         listArray[i] = listArray[i+1];
     }
     currSize--;
+    return temp;
 }
 
 int AList::count(int& x)
@@ -46,12 +57,29 @@ int AList::count(int& x)
 
 void AList::prev()
 {
-   currPos--; 
+    if (currPos != 0)
+    {
+        currPos--;   
+    }
+   
 }
 
 void AList::next()
 {
-   currPos++; 
+    if (currPos != maxSize - 1)
+    {
+        currPos++;   
+    }
+}
+
+void AList::moveToStart()
+{
+    currPos = 0;
+}
+
+void AList::moveToEnd()
+{
+    currPos = currSize-1;
 }
 
 void AList::clear()
@@ -60,3 +88,4 @@ void AList::clear()
     currPos = currSize = 0;
     listArray = new int[maxSize];
 }
+

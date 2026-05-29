@@ -1,5 +1,5 @@
-#ifndef LIST_HPP
-#define LIST_HPP
+#ifndef LIST_ARRAY_HPP
+#define LIST_ARRAY_HPP
 
 class AList
 {
@@ -10,10 +10,13 @@ class AList
         AList(int max);
         ~AList();
         void insert(int& x);
-        void remove();
+        void append(int& x);
+        int remove();
         int count(int& x);
         void prev();
         void next();
+        void moveToStart();
+        void moveToEnd();
         void clear();
 };
 

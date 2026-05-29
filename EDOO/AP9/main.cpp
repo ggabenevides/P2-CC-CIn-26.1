@@ -1,4 +1,5 @@
-#include "list.hpp"
+//#include "listArray.hpp"
+#include "listLink.hpp"
 #include <string>
 #include <iostream>
 using namespace std;
@@ -6,7 +7,8 @@ using namespace std;
 int main()
 {
     //instanciar lista
-    AList lista(20);
+    //AList lista(20);
+    LList lista;
     //entrada: número de cases
     int caseCount;
     cin >> caseCount;
@@ -37,7 +39,7 @@ int main()
             }
             else if (operation.find("remove") != std::string::npos)
             {
-                lista.remove();
+                int temp = lista.remove();
             }
             else if (operation.find("next") != std::string::npos)
             {
