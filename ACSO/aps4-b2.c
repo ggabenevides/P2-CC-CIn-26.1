@@ -8,7 +8,6 @@ int main()
     int n, t;
 
     scanf("%d", &n); //número de filhos
-    scanf("%d", &t);//tempo para dormir
 
     for(int i = 0; i < n; i++)
     {
