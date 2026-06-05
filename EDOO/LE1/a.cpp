@@ -33,11 +33,10 @@ class Queue
         {
             clear();
             delete front;
-            delete rear;
         }
         void clear()
         {
-            while (rear->next != nullptr)
+            while (size != 0)
             {
                 dequeue();
             }
@@ -48,17 +47,18 @@ class Queue
             rear = rear->next; // move rear pointer to new element
             size++; //update size
         }
-        int dequeue()
-        {
-            if (size == 0) return; //empty queue
-            if (front->next == nullptr) rear = front; // 1 element  
-            Car* temp = front; // use temp var to free storage
+        int dequeue() {
+            if (size == 0) return -1; // guard
+            Car* temp = front->next;  // first real node
             int value = temp->length;
-            front = front->next;// reassign pointer
-            delete temp; // free storage
-            size--; // update size
+            front->next = temp->next;
+            if (front->next == nullptr) rear = front; // list is now empty
+            delete temp;
+            size--;
             return value;
         }
+        int getSize(){return size;}
+        int peekFrontElement() {return front->next->length;}
 };
 
 class Ferry
@@ -86,15 +86,19 @@ class Ferry
             {
             pop();
             }
-            currSide = ("left") ? "right" : "left"; //update side after unloading
         }
-        void push(int& e)
+        void crossRiver()
+        {
+            currSide = (currSide == "left") ? "right" : "left"; //update side after unloading
+        }
+        void push(int e)
         {
             top->next = new Car(e, top->next);
             currLength += e; //assume validity checking outside this method
         }
         int pop()
         {
+            if (currLength == 0) return -1; //guard
             Car* temp = top->next; //temp var to free storage
             top->next = top->next->next; //reassign pointer
             currLength -= temp->length; //update length
@@ -103,7 +107,8 @@ class Ferry
             return value;
         }
         bool isFull(){return currLength == maxLength;}
-        bool validAddition(int& l){return currLength + l <= maxLength;}
+        bool validAddition(int l){return currLength + l <= maxLength;}
+        const std::string getSide(){return currSide;}
 };
 
 // main behavior:
@@ -125,73 +130,46 @@ class Ferry
 
 int main()
 {
-    Queue leftQueue;
-    Queue rightQueue;
     int caseCount;
     std::cin >> caseCount;
-    std::cin.ignore();
 
     for (int i = 1; i <= caseCount; i++)
     {
-        std::string caseInfo;
-        getline(std::cin, caseInfo); //format example "20 4"
+        Queue leftQueue, rightQueue;
 
-        //input treatment
-        bool substr1complete = false;
-        std::string substr1, substr2;
-
-        for (char c : caseInfo)
-        {
-            if (c == ' ')
-            {
-                substr1complete = true;
-            }
-            else if (!substr1complete)
-            {
-                substr1 += c;
-            }
-            else if (substr1complete)
-            {
-                substr2 += c;
-            }
-        }
-
-        int ferryLen = stoi(substr1)*10; //convert m to cm
-        int carCount = stoi(substr2);
+        int ferryLen, carCount;
+        std::cin >> ferryLen >> carCount;
+        ferryLen *= 100;
 
         Ferry f(ferryLen);
 
         for (int j=0; j<carCount; j++)
         {
-            std::string currCar;
-            getline(std::cin, currCar); //format example "2040 left"
+        int carLen;
+        std::string carSide;
+        std::cin >> carLen >> carSide;
 
-            //input treatment
-            bool substr1complete = false;
-            std::string carLenStr, carSide;
-
-            for (char c : currCar)
-            {
-                if (c == ' ')
-                {
-                    substr1complete = true;
-                }
-                else if (!substr1complete)
-                {
-                    carLenStr += c;
-                }
-                else if (substr1complete)
-                {
-                    carSide += c;
-                }
-            }
-
-            int carLen = stoi(carLenStr);
-
-            if (carSide == "left") {leftQueue.enqueue(carLen);}
-            else if (carSide == "right") {rightQueue.enqueue(carLen);}
+        if (carSide == "left") {leftQueue.enqueue(carLen);}
+        else if (carSide == "right") {rightQueue.enqueue(carLen);}
         }
-
-
+        int crossings = 0;
+        while (leftQueue.getSize() != 0 || rightQueue.getSize() != 0)
+        {
+            Queue* currentQueue = (f.getSide() == "left") ? &leftQueue : &rightQueue;
+            
+            // load cars from the current bank until full or no more cars
+            while (currentQueue->getSize() != 0 && f.validAddition(currentQueue->peekFrontElement()))
+            {
+                f.push(currentQueue->dequeue());
+            }
+            
+            // travel to the other side (unloads cars and switches banks)
+            f.clear(); 
+            f.crossRiver();
+            crossings++; 
+        }
+        
+        std::cout << crossings << std::endl;
     }
+    return 0;
 }
