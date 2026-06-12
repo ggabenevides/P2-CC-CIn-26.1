@@ -1,4 +1,5 @@
 #include "listLink.hpp"
+#include <iostream>
 
 Link::Link(const int& elemval, Link* nextval)
 {
@@ -100,4 +101,19 @@ void LList::moveToStart()
 void LList::moveToEnd()
 {
     curr = tail;
+}
+
+int LList::peekCurrElement () {return curr->element;}
+
+Link* LList::peekCurrPtr() {return curr->next;}
+
+void LList::display()
+{
+    Link* tempPtr = head->next;
+    while (tempPtr != nullptr)
+    {
+        std::cout << tempPtr->element << " ";
+        tempPtr = tempPtr->next;
+    }
+    std::cout << std::endl;
 }

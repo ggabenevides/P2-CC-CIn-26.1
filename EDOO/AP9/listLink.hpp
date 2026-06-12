@@ -23,11 +23,14 @@ class LList
         void append(int& x);
         int remove();
         int count(int& x);
+        int peekCurrElement();
+        Link* peekCurrPtr();
         void prev();
         void next();
         void moveToStart();
         void moveToEnd();
         void clear();
+        void display();
 };
 
 #endif
