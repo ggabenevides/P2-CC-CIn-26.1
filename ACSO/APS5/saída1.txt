@@ -1,0 +1,74 @@
+============================================================
+  ALGORITMO: Round Robin (quantum=20ms, tTroca=1ms)
+============================================================
+
+Tempo de retorno por processo:
+  P1: 163 ms
+  P2: 35 ms
+  P3: 44 ms
+  P4: 242 ms
+  P5: 199 ms
+
+Tempo médio de retorno     : 136.60 ms
+Número de chaveamentos     : 12
+Tempo gasto em chaveamentos: 12 ms
+Tempo total da simulação   : 247 ms
+Overhead de chaveamento    : 4.86%  (12 / 247)
+
+Linha do tempo de ocupação da CPU:
+  [    0 ms –    20 ms]  P1
+  [   20 ms –    21 ms]  Escalonador
+  [   21 ms –    36 ms]  P2
+  [   36 ms –    37 ms]  Escalonador
+  [   37 ms –    47 ms]  P3
+  [   47 ms –    48 ms]  Escalonador
+  [   48 ms –    68 ms]  P4
+  [   68 ms –    69 ms]  Escalonador
+  [   69 ms –    89 ms]  P5
+  [   89 ms –    90 ms]  Escalonador
+  [   90 ms –   110 ms]  P1
+  [  110 ms –   111 ms]  Escalonador
+  [  111 ms –   131 ms]  P4
+  [  131 ms –   132 ms]  Escalonador
+  [  132 ms –   152 ms]  P5
+  [  152 ms –   153 ms]  Escalonador
+  [  153 ms –   163 ms]  P1
+  [  163 ms –   164 ms]  Escalonador
+  [  164 ms –   184 ms]  P4
+  [  184 ms –   185 ms]  Escalonador
+  [  185 ms –   205 ms]  P5
+  [  205 ms –   206 ms]  Escalonador
+  [  206 ms –   226 ms]  P4
+  [  226 ms –   227 ms]  Escalonador
+  [  227 ms –   247 ms]  P4
+
+============================================================
+  ALGORITMO: Escalonamento por Prioridade (tTroca=1ms)
+============================================================
+
+Tempo de retorno por processo:
+  P1: 168 ms
+  P2: 16 ms
+  P3: 176 ms
+  P4: 113 ms
+  P5: 234 ms
+
+Tempo médio de retorno     : 141.40 ms
+Número de chaveamentos     : 5
+Tempo gasto em chaveamentos: 5 ms
+Tempo total da simulação   : 240 ms
+Overhead de chaveamento    : 2.08%  (5 / 240)
+
+Linha do tempo de ocupação da CPU:
+  [    0 ms –     1 ms]  P1
+  [    1 ms –     2 ms]  Escalonador
+  [    2 ms –    17 ms]  P2
+  [   17 ms –    18 ms]  Escalonador
+  [   18 ms –   118 ms]  P4
+  [  118 ms –   119 ms]  Escalonador
+  [  119 ms –   168 ms]  P1
+  [  168 ms –   169 ms]  Escalonador
+  [  169 ms –   179 ms]  P3
+  [  179 ms –   180 ms]  Escalonador
+  [  180 ms –   240 ms]  P5
+

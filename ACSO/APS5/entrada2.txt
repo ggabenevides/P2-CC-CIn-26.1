@@ -1,0 +1,6 @@
+3,10,2
+1,0,2,20
+2,0,1,15
+3,5,2,10
+nProc,quantum,tTroca
+ID,Tch,Prio,Tcpu

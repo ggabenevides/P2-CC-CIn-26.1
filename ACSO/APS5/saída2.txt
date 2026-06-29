@@ -1,0 +1,48 @@
+============================================================
+  ALGORITMO: Round Robin (quantum=10ms, tTroca=2ms)
+============================================================
+
+Tempo de retorno por processo:
+  P1: 46 ms
+  P2: 53 ms
+  P3: 29 ms
+
+Tempo médio de retorno     : 42.67 ms
+Número de chaveamentos     : 4
+Tempo gasto em chaveamentos: 8 ms
+Tempo total da simulação   : 53 ms
+Overhead de chaveamento    : 15.09%  (8 / 53)
+
+Linha do tempo de ocupação da CPU:
+  [    0 ms –    10 ms]  P1
+  [   10 ms –    12 ms]  Escalonador
+  [   12 ms –    22 ms]  P2
+  [   22 ms –    24 ms]  Escalonador
+  [   24 ms –    34 ms]  P3
+  [   34 ms –    36 ms]  Escalonador
+  [   36 ms –    46 ms]  P1
+  [   46 ms –    48 ms]  Escalonador
+  [   48 ms –    53 ms]  P2
+
+============================================================
+  ALGORITMO: Escalonamento por Prioridade (tTroca=2ms)
+============================================================
+
+Tempo de retorno por processo:
+  P1: 37 ms
+  P2: 15 ms
+  P3: 44 ms
+
+Tempo médio de retorno     : 32.00 ms
+Número de chaveamentos     : 2
+Tempo gasto em chaveamentos: 4 ms
+Tempo total da simulação   : 49 ms
+Overhead de chaveamento    : 8.16%  (4 / 49)
+
+Linha do tempo de ocupação da CPU:
+  [    0 ms –    15 ms]  P2
+  [   15 ms –    17 ms]  Escalonador
+  [   17 ms –    37 ms]  P1
+  [   37 ms –    39 ms]  Escalonador
+  [   39 ms –    49 ms]  P3
+
