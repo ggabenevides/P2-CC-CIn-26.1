@@ -7,7 +7,7 @@
     - MongoDB, DynamoDB: non-relational database  
     - SQLite: lighter-weight system that can store all of its data in a single file -> we'll use this one for now
 
-### SQLIte Column Types
+### SQLite Column Types
 - TEXT: strings
 - NUMERIC: general for numeric data (bool, data, etc)
 - INTEGER: non-decimals
@@ -55,3 +55,4 @@ SELECT * FROM flights;
 ### Terminal Commands for SQL
 
 - `New-Item flights.sql` to create a new database.
+- `sqlite3 db.sqlite3 ".tables"` 
