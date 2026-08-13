@@ -1,0 +1,1 @@
+Gabi is an aspiring software engineer who is taking CS50's Web Programming with Python and JavaScript.

@@ -1,0 +1,1 @@
+Hey is an informal greeting.
