@@ -6,6 +6,7 @@ from django import forms
 from . import util
 
 import markdown2
+import random
 
 class NewEntryForm(forms.Form):
     title = forms.CharField(label="Title")
@@ -67,4 +68,22 @@ def new_page(request):
     
     return render(request, "encyclopedia/new_page.html", {"form": NewEntryForm()})
 
+def random_page(request):
+    entries = util.list_entries()
+    entry_name = random.choice(entries)
+    return HttpResponseRedirect(reverse("encyclopedia:entry", args=[entry_name]))
 
+def edit_page(request, title):
+    content = util.get_entry(title)
+    if content is None:
+        return render(request, "encyclopedia/error.html", {"title": title}, status=404)
+    if request.method == "POST":
+        form = EditEntryForm(request.POST)
+        if form.is_valid():
+            new_content = form.cleaned_data["content"]
+            util.save_entry(title, new_content)
+            return HttpResponseRedirect(reverse("encyclopedia:entry", args=[title]))
+        return render(request, "encyclopedia/edit_page.html", {"title": title, "form": form})
+    form = EditEntryForm(initial={"content": content})
+    return render(request, "encyclopedia/edit_page.html", {"title": title, "form": form})
+    
